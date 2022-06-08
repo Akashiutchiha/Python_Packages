@@ -8,7 +8,13 @@ DataJson = requests.get('https://favqs.com/api/qotd').text
 #Converting the DataJson into a dictionary
 data = json.loads(DataJson)
 
-quote = data['quote']['body']
-author = data['quote']['author']
-print(f'{quote} by {author}')
+quotes = data['quote']['body']
+authors = data['quote']['author']
+
+def quote():
+    return quotes
+def author():
+    return authors
+def quote_author():
+    return f'{quote} by {author}'
 
